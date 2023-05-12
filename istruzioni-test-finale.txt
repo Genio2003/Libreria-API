@@ -1,0 +1,14 @@
+OBIETTIVO
+Realizzare un'API di una libreria con le seguenti caratteristiche:
+- Login tramite email e password con diversi livelli di ruoli e autorizzazioni (sola lettura, lettura e scrittura);
+- Possibilità di visualizzare un elenco di libri;
+- Possibilità di filtrare tramite codice isbn, titolo e numero di pagine, insieme al filtraggio dell'ordine (ASC o DESC);
+- Possibilità di visualizzazione degli acquirenti di ogni libro.
+- Possibilità di aggiunta nuovi libri, aggiornamento di libri esistenti (es. numero totale di vendite), eliminazione e aggiunta nuovi acquirenti.
+
+STACK RICHIESTO
+- Node JS;
+- Express;
+- Mongo DB.
+
+JSON di esempio da utilizzare per la strutturazione del database e dei dati in allegato.
