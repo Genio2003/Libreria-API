@@ -193,3 +193,95 @@ Realizzare un'API di una libreria con le seguenti caratteristiche:
     }
 ]
 ```
+# Svolgimento
+
+## MongoDB
+### Struttura Database
+- libreria_api
+    - books
+        - books_data
+    - users
+        - user_data
+
+
+### - books
+```json
+[{
+  "_id": {
+    "$oid": "645e3734da61d3953c7da70d"
+  },
+  "isbn": "9781593279509",
+  "title": "Eloquent JavaScript, Third Edition",
+  "subtitle": "A Modern Introduction to Programming",
+  "author": "Marijn Haverbeke",
+  "publisher": "No Starch Press",
+  "pages": 472,
+  "description": "JavaScript lies at the heart of almost every modern web application, from social apps like Twitter to browser-based game frameworks like Phaser and Babylon. Though simple for beginners to pick up and play with, JavaScript is a flexible, complex language that you can use to build full-scale applications.",
+  "purchases": 100,
+  "buyers": [
+    {
+      "first_name": "Mario",
+      "last_name": "Rossi",
+      "email": "mario.rossi@example.com"
+    },
+    {
+      "first_name": "Luigi",
+      "last_name": "Rossi",
+      "email": "luigi.rossi@example.com"
+    }
+  ]
+}]
+```
+### - users
+```json
+[{
+  "_id": {
+    "$oid": "645dfb6d603fefac176165e1"
+  },
+  "email": "admin@admin.com",
+  "password": "$2b$10$h/nL/F9WuxGZTHwRXKYpNOMI8zbErzKDMyCWicHwUjxY./X6JISxK",
+  "role": "admin",
+  "stats": {
+    "numberOfRequests": 145,
+    "lastRequest": {
+      "$numberLong": "1683905559970"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "645e04bca57f7ef54ed3bd1c"
+  },
+  "email": "test@test.com",
+  "password": "$2b$10$xh8z1rt16EyFQDJFsq8Ix.HLKMYbwOoG1HmGAAFpIt3voPXNaQUR2",
+  "role": "user",
+  "stats": {
+    "numberOfRequests": 4,
+    "lastRequest": {
+      "$numberLong": "1683884027276"
+    }
+  }
+}]
+```
+
+## Endpoints Implementati
+
+### `/user/`
+ - POST `/user/login`
+ - POST `/user/register`
+ - GET `/user/:email`
+ - POST `/user/:email`
+ - DELETE `/user/:email`
+
+ ### `/books/`
+ - GET `/books`
+ - GET `/books/:isbn`
+ - POST `/books`
+ - POST `/books/:isbn`
+ - DELETE `/books/:isbn`
+
+### `/books/:isbn/buyers`
+- GET `/books/:isbn/buyers`
+- GET `/books/:isbn/buyers/:email`
+- POST `/books/:isbn/byers`
+- POST `/books/:isbn/buyers/:email`
+- DELETE `/books/:isbn/byers/:email`
